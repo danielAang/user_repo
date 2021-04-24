@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"net/http"
 
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -29,4 +30,6 @@ func (a *App) Initialize(dbName, uri string) {
 	a.Router = mux.NewRouter()
 }
 
-func (a *App) Run(addr string) {}
+func (a *App) Run(addr string) {
+	log.Fatal(http.ListenAndServe(addr, a.Router))
+}

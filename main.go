@@ -11,6 +11,7 @@ func main() {
 		os.Getenv("APP_DB_NAME"),
 		os.Getenv("APP_DB_URI"),
 	)
-	a.Run(":8080")
+	a.MountRoutes()
 	fmt.Printf("Application running %s", a.DB.Name())
+	a.Run(":8080")
 }
