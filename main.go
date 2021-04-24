@@ -13,5 +13,4 @@ func main() {
 	)
 	a.Run(":8080")
 	fmt.Printf("Application running %s", a.DB.Name())
-
 }

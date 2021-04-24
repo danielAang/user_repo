@@ -26,6 +26,7 @@ func (a *App) Initialize(dbName, uri string) {
 		log.Fatal(err)
 	}
 	a.DB = c.Database(dbName)
+	a.Router = mux.NewRouter()
 }
 
 func (a *App) Run(addr string) {}
